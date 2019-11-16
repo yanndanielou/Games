@@ -1,0 +1,26 @@
+Plus de tourelles
+
+C:\Program Files (x86)\Microsoft Games\Age of Empires III\data\techtreey.xml
+
+Modifier
+Tech name ='HCExtensiveFortifications' type ='Normal'>
+(...)
+			<Effect type ='Data' amount ='206.00' subtype ='BuildLimit' relativity ='Absolute'>
+				<Target type ='ProtoUnit'>Outpost</Target></Effect>
+				
+				
+				
+Plus de forts
+
+	<Tech name ='HCUnlockFortVauban' type ='Normal'>
+		<DBID>2662</DBID>
+		<DisplayNameID>41675</DisplayNameID>
+		<Cost resourcetype ='Ships'>10.0000</Cost>
+		<ResearchPoints>40.0000</ResearchPoints>
+		<Status>UNOBTAINABLE</Status>
+		<Icon>buildings\fort\fort_icon</Icon>
+		<RolloverTextID>41674</RolloverTextID>
+		<Flag>HomeCity</Flag>
+		<Effects>
+			<Effect type ='Data' amount ='999.00' subtype ='FreeHomeCityUnit' unittype ='FortWagon' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>				
