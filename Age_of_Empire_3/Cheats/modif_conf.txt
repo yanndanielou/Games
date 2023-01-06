@@ -1,3 +1,104 @@
+
+
+==============================================================================================================================================
+TOut
+
+	<!-- YDA modif -->
+	<Tech name ='HCXPDistributivism' type ='Normal'>
+		<DBID>3440</DBID>
+		<DisplayNameID>47014</DisplayNameID>
+		<Cost resourcetype ='Ships'>1.0000</Cost>
+		<ResearchPoints>40.0000</ResearchPoints>
+		<Status>UNOBTAINABLE</Status>
+		<Icon>ui\techs\native\Distributivism</Icon>
+		<RolloverTextID>47013</RolloverTextID>
+		<Flag>HomeCity</Flag>
+		<Effects>
+		
+			<!-- YDA No gain if amount > 10 -->
+			<Effect type ='Data' amount ='10.25' subtype ='ResourceTrickleRate' resource ='Wood' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='10.25' subtype ='ResourceTrickleRate' resource ='Gold' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='10.50' subtype ='ResourceTrickleRate' resource ='Food' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+				
+			<!-- YDA Works OK mais ne pas passer age 4 directement car bloque evolutions debloquees au fil des ages -->
+			<Effect type ='SetAge'>Age2</Effect>
+			<Effect type ='SetAge'>Age3</Effect>
+			<Effect type ='SetAge'>Age4</Effect>
+			
+			<Effect type ='Data' amount ='10.00' subtype ='FreeHomeCityUnit' unittype ='FortWagon' relativity ='Absolute'>			
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='10.00' subtype ='BuildLimit' relativity ='Absolute'>
+				<Target type ='ProtoUnit'>FortFrontier</Target></Effect>				
+				
+			<!-- YDA inutile vu factory -->
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='CrateofWoodLarge' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>	
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='CrateofFoodLarge' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='CrateofCoinLarge' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+				
+			<Effect type ='Data' amount ='3.00' subtype ='FreeHomeCityUnit' unittype ='FactoryWagon' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+				
+			<!-- YDA pas tres interessant -->
+			<Effect type ='Data' action ='Gather' amount ='100.05' subtype ='WorkRate' unittype ='Food' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect>
+			<Effect type ='Data' action ='Gather' amount ='100.05' subtype ='WorkRate' unittype ='Gold' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect>
+			<Effect type ='Data' action ='Gather' amount ='100.05' subtype ='WorkRate' unittype ='Wood' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect> 
+				
+			<Effect type ='Data' action ='Gather' amount ='50.08' subtype ='WorkRate' unittype ='Mill' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect>
+			<Effect type ='Data' action ='Gather' amount ='50.25' subtype ='WorkRate' unittype ='Plantation' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect>
+				
+			<!-- YDA solution magique -->
+			<Effect type ='Data' action ='AutoGatherFood' amount ='100.30' subtype ='WorkRate' unittype ='Food' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Factory</Target></Effect>
+			<Effect type ='Data' action ='AutoGatherWood' amount ='1000.30' subtype ='WorkRate' unittype ='Wood' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Factory</Target></Effect>
+			<Effect type ='Data' action ='AutoGatherCoin' amount ='10000.30' subtype ='WorkRate' unittype ='Gold' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Factory</Target></Effect>
+			
+			<!-- YDA chiens interessants -->
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='ExplorerDog' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='ExplorerDog' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='ExplorerDog' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='ExplorerDog' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='ExplorerDog' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+				
+			<!-- YDA Hero invincible et rapide -->
+			<Effect type ='Data' amount ='1.50' subtype ='Damage' allactions ='1' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Hero</Target></Effect>
+			<Effect type ='Data' amount ='1000.50' subtype ='Hitpoints' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Hero</Target></Effect>
+			<Effect type ='Data' amount ='3.50' subtype ='MaximumVelocity' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Hero</Target></Effect>
+				
+			<!-- YDA Tours			-->
+			<Effect type ='Data' amount ='600.00' subtype ='BuildLimit' relativity ='Absolute'>
+				<Target type ='ProtoUnit'>Outpost</Target></Effect>
+			<Effect type ='Data' amount ='1.25' subtype ='Hitpoints' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Outpost</Target></Effect>
+			<Effect type ='Data' amount ='10.00' subtype ='FreeHomeCityUnit' unittype ='OutpostWagon' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+				
+				
+			<Effect type ='TextOutput'>47016</Effect>
+		</Effects>
+	</Tech>
+==============================================================================================================================================
+
 Plus de tourelles
 
 C:\Program Files (x86)\Microsoft Games\Age of Empires III\data\techtreey.xml
@@ -24,3 +125,55 @@ Plus de forts
 		<Effects>
 			<Effect type ='Data' amount ='999.00' subtype ='FreeHomeCityUnit' unittype ='FortWagon' relativity ='Absolute'>
 				<Target type ='Player'></Target></Effect>				
+				
+				
+				
+				
+			<Effect type ='SetAge'>Age4</Effect>
+			<Effect type ='Data' amount ='10.00' subtype ='FreeHomeCityUnit' unittype ='CrateofWood' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>				
+			<Effect type ='Data' amount ='30.00' subtype ='FreeHomeCityUnit' unittype ='CrateofWoodLarge' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='20.00' subtype ='FreeHomeCityUnit' unittype ='CrateofFood' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>			
+			<Effect type ='Data' amount ='40.00' subtype ='FreeHomeCityUnit' unittype ='CrateofFoodLarge' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='20.00' subtype ='FreeHomeCityUnit' unittype ='CrateofCoin' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>			
+			<Effect type ='Data' amount ='40.00' subtype ='FreeHomeCityUnit' unittype ='CrateofCoinLarge' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='20.00' subtype ='FreeHomeCityUnit' unittype ='FortWagon' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>	
+			<Effect type ='Data' action ='Gather' amount ='1.10' subtype ='WorkRate' unittype ='Tree' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect>
+			<Effect type ='Data' action ='Gather' amount ='1.10' subtype ='WorkRate' unittype ='ypGroveBuilding' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>AbstractVillager</Target></Effect>				
+		</Effects>
+
+
+==============================================================================================================================================
+Hero francais plus fort
+
+	<!-- YDA modif -->
+	<Tech name ='HCExplorerFrench' type ='Normal'>
+		<DBID>2051</DBID>
+		<DisplayNameID>35205</DisplayNameID>
+		<Cost resourcetype ='Ships'>1.0000</Cost>
+		<ResearchPoints>40.0000</ResearchPoints>
+		<Status>UNOBTAINABLE</Status>
+		<Icon>ui\techs\hc_explorer_french_voyageur\hc_explorer_french</Icon>
+		<RolloverTextID>35228</RolloverTextID>
+		<Flag>HomeCity</Flag>
+		<Effects>
+			<Effect type ='Data' amount ='1.00' subtype ='FreeHomeCityUnit' unittype ='ExplorerDog' relativity ='Absolute'>
+				<Target type ='Player'></Target></Effect>
+			<Effect type ='Data' amount ='10.50' subtype ='Damage' allactions ='1' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Hero</Target></Effect>
+			<Effect type ='Data' amount ='100.50' subtype ='Hitpoints' relativity ='BasePercent'>
+				<Target type ='ProtoUnit'>Hero</Target></Effect>
+			<Effect type ='TextOutput'>41832</Effect>
+		</Effects>
+	</Tech>
+	
+	
+	
